@@ -1,57 +1,1159 @@
-<!doctype html>
-<html lang='en'>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'>
-<title>PaySwift — No phone. No card. Just your presence.</title>
-<style>body{font-family:Inter, system-ui; margin:0; color:#0f172a; background:linear-gradient(180deg,#f8fafc,#ffffff);} .container{max-width:900px;margin:40px auto;padding:24px;} header{display:flex;align-items:center;gap:16px;} .logo{width:64px;height:64px;border-radius:12px;background:#0ea5a3;color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;} h1{margin:0;font-size:28px;} p.lead{color:#475569;} .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px;} .card{background:white;border-radius:12px;padding:14px;box-shadow:0 8px 30px rgba(2,6,23,0.06);} .images{display:flex;flex-wrap:wrap;gap:8px;} .images img{width:calc(50% - 4px);border-radius:8px;object-fit:cover;height:160px;} .cta{display:flex;gap:10px;margin-top:18px;} .btn{padding:12px 16px;border-radius:10px;text-decoration:none;font-weight:600;} .btn-primary{background:#0ea5a3;color:white;} .btn-ghost{background:transparent;border:1px solid #cbd5e1;color:#0f172a;} footer{text-align:center;color:#94a3b8;margin-top:28px;font-size:13px;} @media(max-width:700px){.grid{grid-template-columns:1fr}.images img{width:100%;height:160px}} .features ul{list-style:none;padding:0;margin:0} .features li{padding:6px 0;border-bottom:1px dashed #eef2f7} .tag{display:inline-block;background:#eef2ff;color:#0f172a;padding:6px 8px;border-radius:999px;font-weight:600;margin-right:8px;font-size:12px} </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PaySwift – Revolutionary Payment Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body { 
+            font-family: 'Inter', sans-serif;
+            background: #000000;
+            color: white;
+            overflow-x: hidden;
+        }
+        
+        /* Dubai Future Background */
+        .space-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(0, 255, 255, 0.4), transparent 40%),
+                radial-gradient(circle at 80% 20%, rgba(255, 0, 255, 0.4), transparent 40%),
+                radial-gradient(circle at 40% 40%, rgba(0, 150, 255, 0.3), transparent 50%),
+                radial-gradient(circle at 60% 10%, rgba(255, 100, 0, 0.3), transparent 40%),
+                radial-gradient(circle at 10% 50%, rgba(150, 0, 255, 0.3), transparent 45%),
+                linear-gradient(135deg, #1a0033 0%, #330066 25%, #001a33 50%, #003366 75%, #1a0033 100%);
+            animation: backgroundShift 15s ease-in-out infinite;
+        }
+        
+        @keyframes backgroundShift {
+            0%, 100% { 
+                background: 
+                    radial-gradient(circle at 20% 80%, rgba(0, 255, 255, 0.4), transparent 40%),
+                    radial-gradient(circle at 80% 20%, rgba(255, 0, 255, 0.4), transparent 40%),
+                    radial-gradient(circle at 40% 40%, rgba(0, 150, 255, 0.3), transparent 50%),
+                    radial-gradient(circle at 60% 10%, rgba(255, 100, 0, 0.3), transparent 40%),
+                    radial-gradient(circle at 10% 50%, rgba(150, 0, 255, 0.3), transparent 45%),
+                    linear-gradient(135deg, #1a0033 0%, #330066 25%, #001a33 50%, #003366 75%, #1a0033 100%);
+            }
+            33% { 
+                background: 
+                    radial-gradient(circle at 80% 20%, rgba(255, 100, 0, 0.5), transparent 40%),
+                    radial-gradient(circle at 20% 80%, rgba(0, 255, 150, 0.4), transparent 40%),
+                    radial-gradient(circle at 60% 60%, rgba(255, 0, 150, 0.4), transparent 50%),
+                    radial-gradient(circle at 10% 10%, rgba(0, 200, 255, 0.3), transparent 40%),
+                    radial-gradient(circle at 90% 50%, rgba(255, 200, 0, 0.3), transparent 45%),
+                    linear-gradient(135deg, #330066 0%, #001a33 25%, #003366 50%, #1a0033 75%, #330066 100%);
+            }
+            66% { 
+                background: 
+                    radial-gradient(circle at 40% 10%, rgba(0, 255, 200, 0.4), transparent 40%),
+                    radial-gradient(circle at 70% 90%, rgba(255, 50, 200, 0.5), transparent 40%),
+                    radial-gradient(circle at 10% 70%, rgba(100, 0, 255, 0.4), transparent 50%),
+                    radial-gradient(circle at 90% 30%, rgba(255, 150, 0, 0.3), transparent 40%),
+                    radial-gradient(circle at 50% 50%, rgba(0, 100, 255, 0.3), transparent 45%),
+                    linear-gradient(135deg, #001a33 0%, #003366 25%, #1a0033 50%, #330066 75%, #001a33 100%);
+            }
+        }
+        
+        /* Flowing Particle Streams */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        
+        .particle-stream {
+            position: absolute;
+            width: 2px;
+            height: 100px;
+            background: linear-gradient(to bottom, 
+                transparent 0%, 
+                rgba(120, 219, 255, 0.8) 20%, 
+                rgba(255, 119, 198, 0.9) 50%, 
+                rgba(120, 119, 198, 0.8) 80%, 
+                transparent 100%);
+            border-radius: 2px;
+            animation: streamFlow 8s linear infinite;
+            box-shadow: 0 0 10px rgba(120, 219, 255, 0.5);
+        }
+        
+        .particle-stream.stream-2 {
+            background: linear-gradient(to bottom, 
+                transparent 0%, 
+                rgba(255, 119, 198, 0.8) 20%, 
+                rgba(120, 219, 255, 0.9) 50%, 
+                rgba(255, 119, 198, 0.8) 80%, 
+                transparent 100%);
+            animation-duration: 12s;
+            box-shadow: 0 0 10px rgba(255, 119, 198, 0.5);
+        }
+        
+        .particle-stream.stream-3 {
+            background: linear-gradient(to bottom, 
+                transparent 0%, 
+                rgba(120, 119, 198, 0.8) 20%, 
+                rgba(120, 219, 255, 0.9) 50%, 
+                rgba(120, 119, 198, 0.8) 80%, 
+                transparent 100%);
+            animation-duration: 15s;
+            box-shadow: 0 0 10px rgba(120, 119, 198, 0.5);
+        }
+        
+        @keyframes streamFlow {
+            0% { 
+                transform: translateY(-120px) translateX(0px) rotate(0deg); 
+                opacity: 0; 
+                filter: blur(0px);
+            }
+            5% { 
+                opacity: 1; 
+                filter: blur(0px);
+            }
+            50% {
+                filter: blur(1px);
+            }
+            95% { 
+                opacity: 1; 
+                filter: blur(0px);
+            }
+            100% { 
+                transform: translateY(100vh) translateX(50px) rotate(5deg); 
+                opacity: 0; 
+                filter: blur(2px);
+            }
+        }
+        
+        /* Floating Orbs */
+        .floating-orb {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, 
+                rgba(120, 219, 255, 0.8), 
+                rgba(120, 219, 255, 0.2) 70%, 
+                transparent);
+            animation: orbFloat 20s ease-in-out infinite;
+            filter: blur(1px);
+            box-shadow: 0 0 30px rgba(120, 219, 255, 0.4);
+        }
+        
+        .floating-orb.orb-2 {
+            background: radial-gradient(circle at 30% 30%, 
+                rgba(255, 119, 198, 0.8), 
+                rgba(255, 119, 198, 0.2) 70%, 
+                transparent);
+            animation-duration: 25s;
+            animation-delay: -5s;
+            box-shadow: 0 0 30px rgba(255, 119, 198, 0.4);
+        }
+        
+        .floating-orb.orb-3 {
+            background: radial-gradient(circle at 30% 30%, 
+                rgba(120, 119, 198, 0.8), 
+                rgba(120, 119, 198, 0.2) 70%, 
+                transparent);
+            animation-duration: 30s;
+            animation-delay: -10s;
+            box-shadow: 0 0 30px rgba(120, 119, 198, 0.4);
+        }
+        
+        @keyframes orbFloat {
+            0%, 100% { 
+                transform: translate(0px, 0px) scale(1); 
+                opacity: 0.6; 
+            }
+            25% { 
+                transform: translate(100px, -50px) scale(1.2); 
+                opacity: 0.8; 
+            }
+            50% { 
+                transform: translate(-50px, -100px) scale(0.8); 
+                opacity: 1; 
+            }
+            75% { 
+                transform: translate(-100px, 50px) scale(1.1); 
+                opacity: 0.7; 
+            }
+        }
+        
+        /* Glass Card Effect */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .glass-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 35px 60px rgba(0, 0, 0, 0.2);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        /* Button Styles */
+        .btn-primary {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border: none;
+            color: white;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+        
+        /* Scroll Reveal Animations */
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(100px);
+            transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .reveal-up.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .reveal-left.revealed {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(100px);
+            transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .reveal-right.revealed {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        /* Pulse Animation */
+        .pulse-slow {
+            animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
+        /* Floating Animation */
+        .float {
+            animation: floatUpDown 6s ease-in-out infinite;
+        }
+        
+        @keyframes floatUpDown {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #f5576c);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 8s ease infinite;
+        }
+        
+        /* Loading Animation */
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .text-6xl { font-size: 3rem; }
+            .text-5xl { font-size: 2.5rem; }
+            .text-4xl { font-size: 2rem; }
+        }
+        
+        /* White Crystal System */
+        .crystal-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 5;
+        }
+        
+        .mini-crystal {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            cursor: pointer;
+            pointer-events: all;
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .mini-crystal-core {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            animation: miniCrystalFloat 4s ease-in-out infinite;
+            box-shadow: 
+                0 0 15px rgba(255, 255, 255, 0.8),
+                inset 0 0 8px rgba(255, 255, 255, 0.5);
+        }
+        
+        .mini-crystal-glow {
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            right: -8px;
+            bottom: -8px;
+            background: radial-gradient(circle, 
+                rgba(255, 255, 255, 0.3) 0%, 
+                rgba(255, 255, 255, 0.1) 50%, 
+                transparent 70%);
+            border-radius: 50%;
+            animation: miniGlow 2s ease-in-out infinite;
+        }
+        
+        @keyframes miniCrystalFloat {
+            0%, 100% { 
+                transform: translateY(0) scale(1); 
+                opacity: 0.9;
+            }
+            50% { 
+                transform: translateY(-8px) scale(1.1); 
+                opacity: 1;
+            }
+        }
+        
+        @keyframes miniGlow {
+            0%, 100% { 
+                opacity: 0.3; 
+                transform: scale(1); 
+            }
+            50% { 
+                opacity: 0.7; 
+                transform: scale(1.3); 
+            }
+        }
+        
+        /* Crystal States */
+        .mini-crystal.combining {
+            animation: combineToCenter 3s ease-in-out forwards;
+        }
+        
+        .mini-crystal.separating {
+            animation: separateFromCenter 2s ease-out forwards;
+        }
+        
+        .mini-crystal.forming-logo {
+            animation: formPaySwift 4s ease-in-out forwards;
+        }
+        
+        @keyframes combineToCenter {
+            0% { 
+                transform: translate(0, 0) scale(1);
+                opacity: 0.9;
+            }
+            100% { 
+                transform: translate(var(--center-x), var(--center-y)) scale(0.8);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes separateFromCenter {
+            0% { 
+                transform: translate(var(--center-x), var(--center-y)) scale(0.8);
+                opacity: 1;
+            }
+            100% { 
+                transform: translate(var(--separate-x), var(--separate-y)) scale(1);
+                opacity: 0.9;
+            }
+        }
+        
+        @keyframes formPaySwift {
+            0% { 
+                transform: translate(var(--separate-x), var(--separate-y)) scale(1);
+                opacity: 0.9;
+            }
+            50% {
+                transform: translate(var(--separate-x), var(--separate-y)) scale(1.5);
+                opacity: 1;
+            }
+            100% { 
+                transform: translate(var(--logo-x), var(--logo-y)) scale(1.2);
+                opacity: 1;
+            }
+        }
+        
+        /* PaySwift Logo Formation */
+        .payswift-logo {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 4rem;
+            font-weight: 900;
+            color: white;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+            opacity: 0;
+            transition: opacity 2s ease-in-out;
+            z-index: 10;
+            pointer-events: none;
+        }
+        
+        .payswift-logo.visible {
+            opacity: 1;
+        }
+    </style>
 </head>
 <body>
-<div class='container'>
-<header>
-<div class='logo'>PS</div>
-<div>
-<h1>PaySwift — No phone. No card. Just your presence.</h1>
-<p class='lead'>Biometric Mirror Terminal (Face + Palm + Voice) — offline-capable, inclusive payments for the next billion users.</p>
-</div>
-</header>
-<div class='grid'>
-<div class='card'>
-<h3>Problem we solve</h3>
-<ul><li>Smartphone dependency for digital payments</li><li>Network/OTP failures and fraud via QR scams</li><li>Low adoption among elderly, illiterate, offline users</li></ul>
-<h3 style='margin-top:12px'>Our Solution</h3>
-<p>Touchless Mirror Terminal with instant biometric auth, offline fallback, AI fraud detection, and easy merchant onboarding.</p>
-<div class='cta'><a class='btn btn-primary' href='PaySwift_PitchDeck_Premium.pptx' download>Download Investor Deck</a><a class='btn btn-ghost' href='#contact'>Contact Founder</a></div>
-<div style='margin-top:12px'><span class='tag'>Pilot: Mumbai</span><span class='tag'>GTM: SDK & Terminals</span></div>
-</div>
-<div class='card'>
-<h3>Key Benefits</h3>
-<div class='features'><ul><li>Works without smartphone or literacy</li><li>Offline-first architecture with secure sync</li><li>Instant biometric KYC via Aadhaar integration</li><li>Premium design for high-footfall venues</li></ul></div>
-<h3 style='margin-top:12px'>Market Snapshot</h3>
-<p>TAM (Global): ~$180B+ | SAM (India): 600M+ Aadhaar users</p>
-</div>
-</div>
-<section style='margin-top:18px'>
-<h2 style='margin-bottom:10px'>Product Design</h2>
-<div class='images'>
-<img src='2bc863ad-7acb-4bb4-a728-273ed481428c.jpg' alt='PaySwift design image'>
-<img src='047ee28f-a59a-42f1-a0f4-06b7eab04005.jpg' alt='PaySwift design image'>
-<img src='65f8207e-8897-4368-b8ac-be7a11f115c3.jpg' alt='PaySwift design image'>
-<img src='2642ea86-4427-4ff8-ad22-f701c5b69a72.jpg' alt='PaySwift design image'>
-</div>
-</section>
-<section style='margin-top:18px'>
-<h2 style='margin-bottom:8px'>Traction & Pilot</h2>
-<div class='card' style='padding:12px;'><ul><li>50 terminals planned for Mumbai pilot</li><li>10+ merchant partners pre-confirmed</li><li>Early user feedback: 91% prefer over phone UPI (simulated)</li></ul></div>
-</section>
-<section id='contact' style='margin-top:18px'>
-<h2>Contact</h2>
-<div class='card'>
-<p>Founder: Manish<br>Email: <a href='mailto:manish@example.com'>manish@example.com</a></p>
-<p>Want us to demo? Click below to request a quick call.</p>
-<a class='btn btn-primary' href='mailto:manish@example.com?subject=PaySwift%20Investor%20Interest'>Request Call</a>
-</div>
-</section>
-<footer>Built with love • PaySwift © 2025</footer>
-</div>
-</body>
+    <!-- Space Background -->
+    <div class="space-bg"></div>
+    
+    <!-- Floating Particles -->
+    <div class="particles" id="particles"></div>
+    
+    <!-- Crystal Container -->
+    <div class="crystal-container" id="crystalContainer"></div>
+    
+    <!-- PaySwift Logo Formation -->
+    <div class="payswift-logo" id="payswiftLogo">PaySwift</div>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center relative z-10">
+            <div class="reveal-left">
+                <div class="mb-8">
+                    <h1 class="text-6xl lg:text-8xl font-black mb-6">
+                        <span class="gradient-text">PaySwift</span>
+                    </h1>
+                    <h2 class="text-2xl lg:text-3xl font-light mb-8 text-white/90">
+                        Revolutionary Payment Solutions
+                    </h2>
+                </div>
+                
+                <p class="text-xl text-white/80 mb-12 leading-relaxed">
+                    Experience the future of payments with our AI-powered biometric authentication system. 
+                    Secure, instant, and effortless transactions at your fingertips.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-6 items-center">
+                    <button onclick="requestDemo()" class="btn-primary px-8 py-4 rounded-full text-lg font-semibold">
+                        Request Demo
+                    </button>
+                    <a href="mailto:manishalwaria6@gmail.com" class="btn-secondary px-8 py-4 rounded-full text-lg font-semibold">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+            
+            <div class="flex justify-center reveal-right">
+                <div class="relative float">
+                    <div class="glass-card p-8 rounded-3xl">
+                        <img src="https://i.postimg.cc/0rcDw8Gv/image.png" 
+                             alt="PaySwift Biometric Scanner" 
+                             class="w-80 h-auto object-contain filter drop-shadow-2xl">
+                        <div class="text-center mt-6">
+                            <h3 class="text-2xl font-bold text-white">PaySwift Terminal</h3>
+                            <p class="text-white/70 mt-2">Next-Generation Biometric Interface</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="py-32 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-20 reveal-up">
+                <h2 class="text-5xl font-bold mb-8 gradient-text">The Problem</h2>
+                <p class="text-2xl text-white/80 max-w-4xl mx-auto">
+                    Current payment systems are slow, insecure, and inconvenient
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="glass-card p-8 rounded-2xl text-center reveal-up">
+                    <div class="w-20 h-20 mx-auto mb-6 bg-red-500/20 rounded-full flex items-center justify-center border-2 border-red-400">
+                        <span class="text-3xl">⏱️</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-white">Slow Processing</h3>
+                    <p class="text-white/70">Traditional payments take too long to process</p>
+                </div>
+                <div class="glass-card p-8 rounded-2xl text-center reveal-up" style="animation-delay: 0.2s;">
+                    <div class="w-20 h-20 mx-auto mb-6 bg-yellow-500/20 rounded-full flex items-center justify-center border-2 border-yellow-400">
+                        <span class="text-3xl">🔓</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-white">Security Issues</h3>
+                    <p class="text-white/70">Vulnerable to fraud and data breaches</p>
+                </div>
+                <div class="glass-card p-8 rounded-2xl text-center reveal-up" style="animation-delay: 0.4s;">
+                    <div class="w-20 h-20 mx-auto mb-6 bg-purple-500/20 rounded-full flex items-center justify-center border-2 border-purple-400">
+                        <span class="text-3xl">📱</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-white">Device Dependency</h3>
+                    <p class="text-white/70">Requires cards, phones, or other devices</p>
+                </div>
+                <div class="glass-card p-8 rounded-2xl text-center reveal-up" style="animation-delay: 0.6s;">
+                    <div class="w-20 h-20 mx-auto mb-6 bg-blue-500/20 rounded-full flex items-center justify-center border-2 border-blue-400">
+                        <span class="text-3xl">🌐</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-white">Connectivity Issues</h3>
+                    <p class="text-white/70">Fails without stable internet connection</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="py-32 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20 reveal-up">
+                <h2 class="text-5xl font-bold mb-8 gradient-text">Our Solution</h2>
+                <p class="text-2xl text-white/80 max-w-4xl mx-auto">
+                    Biometric authentication powered by artificial intelligence
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="glass-card p-8 rounded-2xl text-center reveal-up">
+                    <div class="w-20 h-20 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full mx-auto mb-6 flex items-center justify-center text-white text-2xl font-bold">1</div>
+                    <h3 class="text-xl font-bold mb-4 text-white">Approach</h3>
+                    <p class="text-white/70">User walks up to the payment terminal</p>
+                    <div class="mt-4 text-4xl">🚶‍♂️</div>
+                </div>
+                <div class="glass-card p-8 rounded-2xl text-center reveal-up" style="animation-delay: 0.2s;">
+                    <div class="w-20 h-20 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full mx-auto mb-6 flex items-center justify-center text-white text-2xl font-bold">2</div>
+                    <h3 class="text-xl font-bold mb-4 text-white">Scan</h3>
+                    <p class="text-white/70">Biometric data is captured automatically</p>
+                    <div class="mt-4 text-4xl">👁️</div>
+                </div>
+                <div class="glass-card p-8 rounded-2xl text-center reveal-up" style="animation-delay: 0.4s;">
+                    <div class="w-20 h-20 bg-gradient-to-r from-green-400 to-blue-500 rounded-full mx-auto mb-6 flex items-center justify-center text-white text-2xl font-bold">3</div>
+                    <h3 class="text-xl font-bold mb-4 text-white">Verify</h3>
+                    <p class="text-white/70">AI processes and verifies identity</p>
+                    <div class="mt-4 text-4xl">🤖</div>
+                </div>
+                <div class="glass-card p-8 rounded-2xl text-center reveal-up" style="animation-delay: 0.6s;">
+                    <div class="w-20 h-20 bg-gradient-to-r from-yellow-400 to-red-500 rounded-full mx-auto mb-6 flex items-center justify-center text-white text-2xl font-bold">4</div>
+                    <h3 class="text-xl font-bold mb-4 text-white">Pay</h3>
+                    <p class="text-white/70">Transaction completed instantly</p>
+                    <div class="mt-4 text-4xl">💳</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section class="py-32 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20 reveal-up">
+                <h2 class="text-5xl font-bold mb-8 gradient-text">Technology</h2>
+                <p class="text-2xl text-white/80 max-w-4xl mx-auto">
+                    Cutting-edge AI and biometric technology
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="reveal-left">
+                    <div class="glass-card p-12 rounded-3xl">
+                        <h3 class="text-3xl font-bold mb-8 text-center gradient-text">System Architecture</h3>
+                        <svg class="w-full h-80" viewBox="0 0 400 300">
+                            <defs>
+                                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+                                </linearGradient>
+                                <filter id="glow">
+                                    <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                                    <feMerge> 
+                                        <feMergeNode in="coloredBlur"/>
+                                        <feMergeNode in="SourceGraphic"/>
+                                    </feMerge>
+                                </filter>
+                            </defs>
+                            
+                            <!-- Scanner -->
+                            <rect x="50" y="50" width="60" height="80" rx="10" fill="url(#grad1)" opacity="0.9" filter="url(#glow)"/>
+                            <text x="80" y="100" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Scanner</text>
+                            
+                            <!-- AI Core -->
+                            <circle cx="200" cy="90" r="30" fill="#f093fb" opacity="0.9" filter="url(#glow)"/>
+                            <text x="200" y="95" text-anchor="middle" fill="white" font-size="12" font-weight="bold">AI Core</text>
+                            
+                            <!-- Database -->
+                            <rect x="320" y="50" width="60" height="40" rx="8" fill="#23d5ab" opacity="0.9" filter="url(#glow)"/>
+                            <text x="350" y="75" text-anchor="middle" fill="white" font-size="11" font-weight="bold">Database</text>
+                            
+                            <!-- Bank -->
+                            <rect x="320" y="120" width="60" height="40" rx="8" fill="#f5576c" opacity="0.9" filter="url(#glow)"/>
+                            <text x="350" y="145" text-anchor="middle" fill="white" font-size="11" font-weight="bold">Bank API</text>
+                            
+                            <!-- Animated connections -->
+                            <line x1="110" y1="90" x2="170" y2="90" stroke="white" stroke-width="3" stroke-dasharray="10,5" filter="url(#glow)">
+                                <animate attributeName="stroke-dashoffset" values="0;15" dur="1.5s" repeatCount="indefinite"/>
+                            </line>
+                            <line x1="230" y1="90" x2="320" y2="70" stroke="white" stroke-width="3" stroke-dasharray="10,5" filter="url(#glow)">
+                                <animate attributeName="stroke-dashoffset" values="0;15" dur="1.5s" repeatCount="indefinite"/>
+                            </line>
+                            <line x1="230" y1="90" x2="320" y2="140" stroke="white" stroke-width="3" stroke-dasharray="10,5" filter="url(#glow)">
+                                <animate attributeName="stroke-dashoffset" values="0;15" dur="1.5s" repeatCount="indefinite"/>
+                            </line>
+                        </svg>
+                    </div>
+                </div>
+                <div class="reveal-right">
+                    <h3 class="text-4xl font-bold mb-8 gradient-text">Key Features</h3>
+                    <div class="space-y-6">
+                        <div class="glass-card p-6 rounded-2xl">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full flex items-center justify-center text-white font-bold">🔬</div>
+                                <div>
+                                    <h4 class="font-bold text-xl text-white">Biometric Scanning</h4>
+                                    <p class="text-white/70">Advanced facial and fingerprint recognition</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="glass-card p-6 rounded-2xl">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full flex items-center justify-center text-white font-bold">🧠</div>
+                                <div>
+                                    <h4 class="font-bold text-xl text-white">AI Processing</h4>
+                                    <p class="text-white/70">Machine learning for accurate identification</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="glass-card p-6 rounded-2xl">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-gradient-to-r from-green-400 to-blue-500 rounded-full flex items-center justify-center text-white font-bold">🔐</div>
+                                <div>
+                                    <h4 class="font-bold text-xl text-white">Secure Encryption</h4>
+                                    <p class="text-white/70">Bank-level security for all transactions</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="glass-card p-6 rounded-2xl">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-gradient-to-r from-yellow-400 to-red-500 rounded-full flex items-center justify-center text-white font-bold">⚡</div>
+                                <div>
+                                    <h4 class="font-bold text-xl text-white">Instant Processing</h4>
+                                    <p class="text-white/70">Transactions completed in under 2 seconds</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Section -->
+    <section class="py-32 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20 reveal-up">
+                <h2 class="text-5xl font-bold mb-8 gradient-text">Market Opportunity</h2>
+                <p class="text-2xl text-white/80 max-w-4xl mx-auto">
+                    Massive potential in the growing digital payments market
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-16 mb-20">
+                <div class="glass-card p-12 rounded-3xl text-center reveal-up">
+                    <div class="text-6xl font-black mb-4 gradient-text" id="india-market">$0B+</div>
+                    <h3 class="text-3xl font-bold mb-4 text-white">India Market</h3>
+                    <p class="text-white/70 text-xl">Digital payments market size</p>
+                </div>
+                <div class="glass-card p-12 rounded-3xl text-center reveal-up">
+                    <div class="text-6xl font-black mb-4 gradient-text" id="global-market">$0B+</div>
+                    <h3 class="text-3xl font-bold mb-4 text-white">Global Market</h3>
+                    <p class="text-white/70 text-xl">Total addressable market worldwide</p>
+                </div>
+            </div>
+            
+            <div class="glass-card p-12 rounded-3xl reveal-up">
+                <h3 class="text-4xl font-bold text-center mb-12 gradient-text">Target Industries</h3>
+                <div class="grid md:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <div class="w-24 h-24 bg-gradient-to-r from-orange-400 to-red-500 rounded-full mx-auto mb-6 flex items-center justify-center text-5xl">☕</div>
+                        <h4 class="text-2xl font-bold mb-4 text-white">Restaurants</h4>
+                        <p class="text-white/70">Fast-casual dining and quick service</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-24 h-24 bg-gradient-to-r from-green-400 to-blue-500 rounded-full mx-auto mb-6 flex items-center justify-center text-5xl">🛍️</div>
+                        <h4 class="text-2xl font-bold mb-4 text-white">Retail</h4>
+                        <p class="text-white/70">Stores and shopping centers</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-24 h-24 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full mx-auto mb-6 flex items-center justify-center text-5xl">🚇</div>
+                        <h4 class="text-2xl font-bold mb-4 text-white">Transportation</h4>
+                        <p class="text-white/70">Public transit and ride sharing</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-24 h-24 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full mx-auto mb-6 flex items-center justify-center text-5xl">🛒</div>
+                        <h4 class="text-2xl font-bold mb-4 text-white">Street Vendors</h4>
+                        <p class="text-white/70">Small businesses and local markets</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder Section -->
+    <section class="py-32 relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="glass-card p-16 rounded-3xl text-center reveal-up">
+                <div class="w-48 h-48 mx-auto mb-8 relative">
+                    <div class="absolute -inset-4 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 rounded-full blur-xl opacity-50"></div>
+                    <img src="https://i.postimg.cc/47b8krh5/image.png" 
+                         alt="Manish Alwaria - Founder & CEO" 
+                         class="w-48 h-48 rounded-full object-cover relative z-10 border-4 border-white/30">
+                </div>
+                <h2 class="text-5xl font-bold mb-4 gradient-text">Manish Alwaria</h2>
+                <p class="text-2xl text-white/80 mb-8">Founder & CEO</p>
+                <div class="glass-card p-8 rounded-2xl mb-8">
+                    <p class="text-2xl text-white/90 italic">
+                        "Revolutionizing payments through innovative technology and seamless user experience."
+                    </p>
+                </div>
+                <a href="mailto:manishalwaria6@gmail.com" class="btn-primary px-8 py-4 rounded-full text-lg font-semibold">
+                    Get in Touch
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-32 relative overflow-hidden">
+        <div class="max-w-6xl mx-auto px-6 text-center relative z-10">
+            <div class="reveal-up">
+                <h2 class="text-6xl lg:text-7xl font-bold mb-8">
+                    <span class="gradient-text">Ready to Transform</span>
+                </h2>
+                <h3 class="text-6xl lg:text-7xl font-bold mb-8 text-white">
+                    Your Business?
+                </h3>
+                <p class="text-3xl text-white/80 mb-12 max-w-4xl mx-auto">
+                    Join the payment revolution and give your customers the future they deserve
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-8 justify-center items-center mb-12">
+                    <a href="mailto:manishalwaria6@gmail.com" class="btn-secondary px-8 py-4 rounded-full text-lg font-semibold">
+                        📧 Email Us
+                    </a>
+                    <a href="https://www.linkedin.com/in/manish-alwaria-101b3a279?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" class="btn-secondary px-8 py-4 rounded-full text-lg font-semibold">
+                        💼 LinkedIn
+                    </a>
+                    <a href="#" class="btn-secondary px-8 py-4 rounded-full text-lg font-semibold">
+                        🐦 Twitter
+                    </a>
+                </div>
+                
+                <button onclick="requestDemo()" class="btn-primary px-16 py-6 rounded-full text-2xl font-bold pulse-slow">
+                    🚀 Request Demo
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Initialize Dubai Future style particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            
+            // Create floating orbs
+            for (let i = 0; i < 6; i++) {
+                const orb = document.createElement('div');
+                orb.className = `floating-orb ${i % 3 === 0 ? '' : i % 3 === 1 ? 'orb-2' : 'orb-3'}`;
+                orb.style.width = (30 + Math.random() * 50) + 'px';
+                orb.style.height = orb.style.width;
+                orb.style.left = Math.random() * 100 + '%';
+                orb.style.top = Math.random() * 100 + '%';
+                particlesContainer.appendChild(orb);
+            }
+            
+            // Create flowing particle streams
+            setInterval(() => {
+                const stream = document.createElement('div');
+                const streamType = Math.floor(Math.random() * 3) + 1;
+                stream.className = `particle-stream ${streamType > 1 ? 'stream-' + streamType : ''}`;
+                stream.style.left = Math.random() * 100 + '%';
+                stream.style.height = (80 + Math.random() * 60) + 'px';
+                stream.style.animationDelay = Math.random() * 2 + 's';
+                particlesContainer.appendChild(stream);
+                
+                setTimeout(() => {
+                    if (stream.parentNode) {
+                        stream.parentNode.removeChild(stream);
+                    }
+                }, 15000);
+            }, 800);
+        }
+        
+        // Initialize white crystal system
+        let crystals = [];
+        let crystalState = 'scattered'; // scattered, combining, combined, separating, forming-logo
+        let crystalTimeout;
+        
+        function initCrystals() {
+            const container = document.getElementById('crystalContainer');
+            
+            // Create 50 mini white crystals scattered across screen
+            for (let i = 0; i < 50; i++) {
+                const crystal = document.createElement('div');
+                crystal.className = 'mini-crystal';
+                crystal.dataset.index = i;
+                
+                const x = Math.random() * (window.innerWidth - 12);
+                const y = Math.random() * (window.innerHeight - 12);
+                
+                crystal.style.left = x + 'px';
+                crystal.style.top = y + 'px';
+                
+                crystal.innerHTML = `
+                    <div class="mini-crystal-glow"></div>
+                    <div class="mini-crystal-core"></div>
+                `;
+                
+                // Add touch interaction
+                crystal.addEventListener('click', () => handleCrystalTouch(crystal));
+                crystal.addEventListener('touchstart', (e) => {
+                    e.preventDefault();
+                    handleCrystalTouch(crystal);
+                });
+                
+                container.appendChild(crystal);
+                crystals.push({
+                    element: crystal,
+                    originalX: x,
+                    originalY: y,
+                    index: i
+                });
+            }
+            
+            // Auto-combine crystals after 5 seconds
+            setTimeout(() => {
+                if (crystalState === 'scattered') {
+                    combineCrystals();
+                }
+            }, 5000);
+        }
+        
+        function handleCrystalTouch(crystal) {
+            if (crystalState === 'combined') {
+                separateCrystals();
+            } else if (crystalState === 'scattered') {
+                combineCrystals();
+            }
+        }
+        
+        function combineCrystals() {
+            if (crystalState !== 'scattered') return;
+            
+            crystalState = 'combining';
+            const centerX = window.innerWidth / 2;
+            const centerY = window.innerHeight / 2;
+            
+            crystals.forEach((crystal, index) => {
+                const element = crystal.element;
+                const currentRect = element.getBoundingClientRect();
+                const deltaX = centerX - currentRect.left - 6; // 6 is half crystal width
+                const deltaY = centerY - currentRect.top - 6;
+                
+                element.style.setProperty('--center-x', deltaX + 'px');
+                element.style.setProperty('--center-y', deltaY + 'px');
+                
+                setTimeout(() => {
+                    element.classList.add('combining');
+                }, index * 50); // Stagger the animation
+            });
+            
+            setTimeout(() => {
+                crystalState = 'combined';
+                crystals.forEach(crystal => {
+                    crystal.element.classList.remove('combining');
+                });
+            }, 3000);
+        }
+        
+        function separateCrystals() {
+            if (crystalState !== 'combined') return;
+            
+            crystalState = 'separating';
+            
+            crystals.forEach((crystal, index) => {
+                const element = crystal.element;
+                const angle = (index / crystals.length) * Math.PI * 2;
+                const distance = 200 + Math.random() * 300;
+                const deltaX = Math.cos(angle) * distance;
+                const deltaY = Math.sin(angle) * distance;
+                
+                element.style.setProperty('--separate-x', deltaX + 'px');
+                element.style.setProperty('--separate-y', deltaY + 'px');
+                
+                setTimeout(() => {
+                    element.classList.add('separating');
+                }, index * 30);
+            });
+            
+            setTimeout(() => {
+                crystalState = 'separated';
+                crystals.forEach(crystal => {
+                    crystal.element.classList.remove('separating');
+                });
+                
+                // Start 2-minute timer to form PaySwift logo
+                crystalTimeout = setTimeout(() => {
+                    formPaySwiftLogo();
+                }, 120000); // 2 minutes
+            }, 2000);
+        }
+        
+        function formPaySwiftLogo() {
+            if (crystalState !== 'separated') return;
+            
+            crystalState = 'forming-logo';
+            const logo = document.getElementById('payswiftLogo');
+            
+            // Define PaySwift letter positions (simplified)
+            const letterPositions = generatePaySwiftPositions();
+            
+            crystals.forEach((crystal, index) => {
+                const element = crystal.element;
+                const targetPos = letterPositions[index % letterPositions.length];
+                const centerX = window.innerWidth / 2;
+                const centerY = window.innerHeight / 2;
+                
+                const deltaX = (centerX + targetPos.x) - parseFloat(element.style.left) - 6;
+                const deltaY = (centerY + targetPos.y) - parseFloat(element.style.top) - 6;
+                
+                element.style.setProperty('--logo-x', deltaX + 'px');
+                element.style.setProperty('--logo-y', deltaY + 'px');
+                
+                setTimeout(() => {
+                    element.classList.add('forming-logo');
+                }, index * 80);
+            });
+            
+            // Show PaySwift text after crystals form
+            setTimeout(() => {
+                logo.classList.add('visible');
+                
+                // Hide logo and reset after 5 seconds
+                setTimeout(() => {
+                    logo.classList.remove('visible');
+                    resetCrystals();
+                }, 5000);
+            }, 4000);
+        }
+        
+        function generatePaySwiftPositions() {
+            // Simple letter formation positions for "PaySwift"
+            const positions = [];
+            const letterSpacing = 40;
+            const startX = -160; // Center the word
+            
+            // P
+            for (let i = 0; i < 6; i++) positions.push({ x: startX, y: -30 + i * 10 });
+            for (let i = 0; i < 3; i++) positions.push({ x: startX + 10 + i * 8, y: -30 });
+            for (let i = 0; i < 2; i++) positions.push({ x: startX + 10 + i * 8, y: -10 });
+            
+            // A
+            const aX = startX + letterSpacing;
+            for (let i = 0; i < 6; i++) positions.push({ x: aX, y: -20 + i * 10 });
+            for (let i = 0; i < 6; i++) positions.push({ x: aX + 20, y: -20 + i * 10 });
+            for (let i = 0; i < 3; i++) positions.push({ x: aX + 5 + i * 5, y: -20 });
+            for (let i = 0; i < 3; i++) positions.push({ x: aX + 5 + i * 5, y: 0 });
+            
+            // Y
+            const yX = startX + letterSpacing * 2;
+            for (let i = 0; i < 3; i++) positions.push({ x: yX, y: -20 + i * 10 });
+            for (let i = 0; i < 3; i++) positions.push({ x: yX + 20, y: -20 + i * 10 });
+            for (let i = 0; i < 4; i++) positions.push({ x: yX + 10, y: 0 + i * 8 });
+            for (let i = 0; i < 3; i++) positions.push({ x: yX + 5 + i * 5, y: -5 });
+            for (let i = 0; i < 3; i++) positions.push({ x: yX + 15 - i * 5, y: -5 });
+            
+            return positions;
+        }
+        
+        function resetCrystals() {
+            crystalState = 'scattered';
+            clearTimeout(crystalTimeout);
+            
+            crystals.forEach((crystal, index) => {
+                const element = crystal.element;
+                element.classList.remove('combining', 'separating', 'forming-logo');
+                
+                // Return to original positions
+                setTimeout(() => {
+                    element.style.left = crystal.originalX + 'px';
+                    element.style.top = crystal.originalY + 'px';
+                }, index * 50);
+            });
+            
+            // Restart the cycle
+            setTimeout(() => {
+                if (crystalState === 'scattered') {
+                    combineCrystals();
+                }
+            }, 8000);
+        }
+        
+        // Scroll reveal animation
+        function initScrollReveal() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        
+                        // Trigger market data animation
+                        if (entry.target.querySelector('#india-market')) {
+                            setTimeout(() => {
+                                animateCounter('india-market', 50, '$', 'B+');
+                                animateCounter('global-market', 180, '$', 'B+');
+                            }, 500);
+                        }
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right').forEach(el => {
+                observer.observe(el);
+            });
+        }
+        
+        function animateCounter(elementId, target, prefix = '', suffix = '') {
+            const element = document.getElementById(elementId);
+            let current = 0;
+            const increment = target / 100;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                element.textContent = `${prefix}${Math.floor(current)}${suffix}`;
+            }, 20);
+        }
+        
+        // Demo request function
+        function requestDemo() {
+            const modal = document.createElement('div');
+            modal.className = 'fixed inset-0 bg-black/80 flex items-center justify-center z-50';
+            modal.innerHTML = `
+                <div class="glass-card p-12 rounded-3xl max-w-lg mx-4 text-center">
+                    <div class="loading-spinner mb-6"></div>
+                    <h3 class="text-3xl font-bold mb-6 gradient-text">Demo Request Sent!</h3>
+                    <p class="text-white/80 mb-8 text-lg">
+                        Thank you for your interest in PaySwift. We'll get back to you within 24 hours to schedule your personalized demo.
+                    </p>
+                    <div class="mb-8 glass-card p-4 rounded-2xl">
+                        <p class="text-white font-semibold">manishalwaria6@gmail.com</p>
+                    </div>
+                    <button onclick="this.parentElement.parentElement.remove()" 
+                            class="btn-primary px-8 py-4 rounded-full">
+                        Close
+                    </button>
+                </div>
+            `;
+            document.body.appendChild(modal);
+            
+            setTimeout(() => {
+                if (modal.parentElement) {
+                    modal.style.opacity = '0';
+                    setTimeout(() => modal.remove(), 300);
+                }
+            }, 5000);
+        }
+        
+        // Initialize everything
+        document.addEventListener('DOMContentLoaded', () => {
+            createParticles();
+            initCrystals();
+            initScrollReveal();
+        });
+        
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            if (crystalState === 'scattered') {
+                crystals.forEach(crystal => {
+                    const x = Math.random() * (window.innerWidth - 12);
+                    const y = Math.random() * (window.innerHeight - 12);
+                    crystal.element.style.left = x + 'px';
+                    crystal.element.style.top = y + 'px';
+                    crystal.originalX = x;
+                    crystal.originalY = y;
+                });
+            }
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96d891a770a9c8d9',t:'MTc1NDkyNDA3NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
